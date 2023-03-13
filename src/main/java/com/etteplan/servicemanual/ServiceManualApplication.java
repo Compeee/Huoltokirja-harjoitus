@@ -18,21 +18,4 @@ public class ServiceManualApplication {
         SpringApplication.run(ServiceManualApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner(final FactoryDeviceRepository repository) {
-        return (args) -> {
-
-            /**
-             * Remove this. Temporary device storage before proper data storage is implemented.
-             */
-            final List<FactoryDevice> devices = Arrays.asList(
-                new FactoryDevice("Device X", 2001, "type 10"),
-                new FactoryDevice("Device Y", 2012, "type 3"),
-                new FactoryDevice("Device Z", 1985, "type 1")
-            );
-
-            repository.saveAll(devices);
-        };
-    }
-
 }
