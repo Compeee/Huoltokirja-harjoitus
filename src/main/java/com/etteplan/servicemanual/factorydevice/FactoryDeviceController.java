@@ -1,13 +1,21 @@
 package com.etteplan.servicemanual.factorydevice;
 
-import org.springframework.web.bind.annotation.RestController;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
+import com.univocity.parsers.common.record.Record;
+import com.univocity.parsers.csv.CsvParser;
+import com.univocity.parsers.csv.CsvParserSettings;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+
+import java.io.*;
+import java.nio.file.attribute.FileAttributeView;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 @RestController
+@RequestMapping("/api/devices")
 public class FactoryDeviceController {
 
     private final FactoryDeviceRepository repository;
@@ -16,12 +24,12 @@ public class FactoryDeviceController {
         this.repository = repository;
     }
 
-    @GetMapping("/factorydevices")
+    @GetMapping("/")
     List<FactoryDevice> all() {
         return repository.findAll();
     }
 
-    @GetMapping("/factorydevices/{id}")
+    @GetMapping("/{id}")
     FactoryDevice one(@PathVariable Long id) {
         return repository.findById(id)
             .orElseThrow(() -> new FactoryDeviceNotFoundException(id));

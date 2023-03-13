@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  huoltokirja-database:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: huoltokirja
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
+volumes:
+  pg_data:

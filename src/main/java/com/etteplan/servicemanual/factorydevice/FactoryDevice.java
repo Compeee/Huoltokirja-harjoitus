@@ -49,4 +49,16 @@ public class FactoryDevice {
     public String getType() {
         return this.type;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }
