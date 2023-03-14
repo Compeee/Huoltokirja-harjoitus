@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Entity
 public class ServiceTask {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
     private LocalDateTime taskRegisterDate;
@@ -16,15 +16,18 @@ public class ServiceTask {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    private TaskState taskState;
-    @OneToOne
+    private TaskState state;
+    @ManyToOne
     @JoinColumn(name = "factory_device_id")
     private FactoryDevice factoryDevice;
 
     @Enumerated(EnumType.STRING)
-    private Category category;
+    private TaskCategory category;
 
     public ServiceTask() {
+    }
+    public Long getId() {
+        return this.id;
     }
 
     public FactoryDevice getFactoryDevice() {
@@ -52,18 +55,18 @@ public class ServiceTask {
     }
 
     public TaskState getTaskState() {
-        return taskState;
+        return state;
     }
 
-    public void setTaskState(TaskState taskState) {
-        this.taskState = taskState;
+    public void setTaskState(TaskState state) {
+        this.state = state;
     }
 
-    public Category getCategory() {
+    public TaskCategory getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(TaskCategory category) {
         this.category = category;
     }
 }

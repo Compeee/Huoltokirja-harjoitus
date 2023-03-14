@@ -1,6 +1,6 @@
 package com.etteplan.servicemanual.servicetask;
 
-public enum Category {
+public enum TaskCategory {
     CRITICAL,
     IMPORTANT,
     MILD
