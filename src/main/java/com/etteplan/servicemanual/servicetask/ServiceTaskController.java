@@ -20,13 +20,23 @@ public class ServiceTaskController {
     }
 
     @PostMapping("/{factoryDeviceId}")
-    public ServiceTask createNewServiceTask(@RequestBody ServiceTask serviceTask, @PathVariable Long factoryDeviceId){
+    public ServiceTask createNewServiceTask(@RequestBody ServiceTask serviceTask, @PathVariable("factoryDeviceId") Long factoryDeviceId){
        return serviceTaskService.createNewServiceTask(serviceTask, factoryDeviceId);
     }
 
     @PatchMapping("/{serviceTaskId}")
-    public void updateServiceTaskState(@PathVariable Long serviceTaskId){
-        serviceTaskService.updateServiceTaskState(serviceTaskId);
+    public String updateServiceTaskState(@PathVariable("serviceTaskId") Long serviceTaskId){
+        return serviceTaskService.updateServiceTaskState(serviceTaskId);
+    }
+
+    @GetMapping("/device/{factoryDeviceId}")
+    public List<ServiceTask> getServiceTasksByFactoryDeviceId(@PathVariable("factoryDeviceId") Long factoryDeviceId){
+        return serviceTaskService.getServiceTasksByFactoryDeviceId(factoryDeviceId);
+    }
+
+    @DeleteMapping("/{serviceTaskId}")
+    public String deleteServiceTaskById(@PathVariable("serviceTaskId") Long serviceTaskId){
+        return serviceTaskService.deleteServiceTaskById(serviceTaskId);
     }
 
 }

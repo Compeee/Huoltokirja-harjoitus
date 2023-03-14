@@ -1,6 +1,8 @@
 package com.etteplan.servicemanual.factorydevice;
 
 
+
+import com.etteplan.servicemanual.exceptions.FactoryDeviceNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -23,9 +25,10 @@ public class FactoryDeviceController {
         return factoryDeviceService.getAllFactoryDevices();
     }
 
-    @GetMapping("/{id}")
-    public FactoryDevice getFactoryDeviceById(@PathVariable Long id) {
-        return factoryDeviceService.getFactoryDeviceById(id).orElseThrow(() -> new FactoryDeviceNotFoundException(id));
+    @GetMapping("/{factoryDeviceId}")
+    public FactoryDevice getFactoryDeviceById(@PathVariable Long factoryDeviceId) {
+        return factoryDeviceService.getFactoryDeviceById(factoryDeviceId)
+                .orElseThrow(() -> new FactoryDeviceNotFoundException("Device not found with given id: ", factoryDeviceId));
 
     }
 }

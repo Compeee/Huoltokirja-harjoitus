@@ -11,7 +11,7 @@ public class ServiceTask {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime taskRegisterDate;
+    private LocalDateTime creationDate;
 
     private String description;
 
@@ -24,8 +24,10 @@ public class ServiceTask {
     @Enumerated(EnumType.STRING)
     private TaskCategory category;
 
-    public ServiceTask() {
+    protected ServiceTask() {
     }
+
+
     public Long getId() {
         return this.id;
     }
@@ -39,11 +41,11 @@ public class ServiceTask {
     }
 
     public LocalDateTime getTaskRegisterDate() {
-        return taskRegisterDate;
+        return creationDate;
     }
 
-    public void setTaskRegisterDate(LocalDateTime taskRegisterDate) {
-        this.taskRegisterDate = taskRegisterDate;
+    public void setTaskRegisterDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
     }
 
     public String getDescription() {
