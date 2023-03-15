@@ -15,7 +15,7 @@ public class FactoryDevice {
     private int year;
     private String type;
 
-    protected FactoryDevice() {}
+    public FactoryDevice() {}
 
     /**
      * Constructor of FactoryDevice class
@@ -60,5 +60,8 @@ public class FactoryDevice {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setId(Long factoryDeviceId) {
     }
 }

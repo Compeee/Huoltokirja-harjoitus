@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface ServiceTaskRepository extends JpaRepository<ServiceTask, Long>{
 
-    // Orders the tasks by category first and secondly by the creation date
-    @OrderBy("category ASC, creationDate DESC")
-    List<ServiceTask> findAll();
+    // Finds all tasks and orders by category ascending and creation date descending
 
-    @OrderBy("category ASC, creationDate DESC")
-    List<ServiceTask> findTasksByFactoryDeviceId(Long factoryDeviceId);
+    List<ServiceTask> findAllByOrderByCategoryAscCreationDateDesc();
+
+    // Finds all tasks related to a certain device and orders by category ascending and creation date descending
+    List<ServiceTask> findTasksByFactoryDeviceIdOrderByCategoryAscCreationDateDesc(Long factoryDeviceId);
 
 }
