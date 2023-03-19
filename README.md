@@ -34,7 +34,7 @@ The folder is located here Huoltokirja-harjoitus\src\test\java\com\etteplan\serv
 ### 4. Swagger Docs
 
 ```
-$ http://localhost:9000/swagger-ui.html
+$ Once you have the app running you can access the api docs at http://localhost:9000/swagger-ui.html
 ```
 You can see a summary of what every endpoint does and what inputs it takes in
 
