@@ -8,8 +8,6 @@ import java.util.Optional;
 @Service
 public class FactoryDeviceService {
     private final FactoryDeviceRepository factoryDeviceRepository;
-
-
     public FactoryDeviceService(FactoryDeviceRepository factoryDeviceRepository) {
         this.factoryDeviceRepository = factoryDeviceRepository;
     }
@@ -21,4 +19,7 @@ public class FactoryDeviceService {
         return factoryDeviceRepository.findById(id);
     }
 
+    public FactoryDevice createNewFactoryDevice(FactoryDevice factoryDevice) {
+        return factoryDeviceRepository.save(factoryDevice);
+    }
 }

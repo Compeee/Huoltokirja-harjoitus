@@ -29,6 +29,12 @@ public class FactoryDevice {
         this.year = year;
         this.type = type;
     }
+    public FactoryDevice(Long id, String name, int year, String type) {
+        this.id = id;
+        this.name = name;
+        this.year = year;
+        this.type = type;
+    }
 
     public Long getId() {
         return this.id;

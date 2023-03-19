@@ -15,7 +15,3 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 9000
-springdoc:
-  enable-native-support: true
-  swagger-ui:
-    path: /swagger-ui

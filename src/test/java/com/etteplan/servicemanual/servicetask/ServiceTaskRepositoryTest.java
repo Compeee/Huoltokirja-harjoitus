@@ -22,7 +22,7 @@ public class ServiceTaskRepositoryTest {
 
     @BeforeEach
     void setUp(){
-        serviceTask1 = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.MILD);
+        serviceTask1 = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.UNIMPORTANT);
         serviceTask2 = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.IMPORTANT);
         serviceTask3 = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.CRITICAL);
         serviceTaskRepository.save(serviceTask1);

@@ -17,7 +17,7 @@ public class ServiceTask {
 
     @Enumerated(EnumType.STRING)
     private TaskState state;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "factory_device_id")
     private FactoryDevice factoryDevice;
 
@@ -35,9 +35,20 @@ public class ServiceTask {
         this.category = category;
     }
 
+    public ServiceTask(Long id,LocalDateTime creationDate, String description, TaskState state, FactoryDevice factoryDevice, TaskCategory category) {
+        this.id = id;
+        this.creationDate = creationDate;
+        this.description = description;
+        this.state = state;
+        this.factoryDevice = factoryDevice;
+        this.category = category;
+    }
 
     public Long getId() {
         return this.id;
+    }
+    public void setId(Long id){
+        this.id = id;
     }
 
     public FactoryDevice getFactoryDevice() {
