@@ -20,6 +20,7 @@ $ cd Huoltokirja-harjoitus/src/main/java/com/etteplan/servicemanual
 $ mvn spring-boot:run
 ```
 You might have to right click pom.xml -> maven -> reload project if ur getting build errors
+
 Alternatively you can just run the ServiceManualApplication.java in IntelliJ
 
 ### 3. Run Tests
