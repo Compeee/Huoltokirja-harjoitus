@@ -19,6 +19,8 @@ $ docker-compose up -d
 $ cd Huoltokirja-harjoitus/src/main/java/com/etteplan/servicemanual
 $ mvn spring-boot:run
 ```
+The database is seeded on run with the data from seeddata.csv along with a few service tasks.
+
 You might have to right click pom.xml -> maven -> reload project if ur getting build errors
 
 Alternatively you can just run the ServiceManualApplication.java in IntelliJ
