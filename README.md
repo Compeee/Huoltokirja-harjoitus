@@ -18,9 +18,9 @@ $ docker-compose up -d
 ```
 $ cd Huoltokirja-harjoitus/src/main/java/com/etteplan/servicemanual
 $ mvn spring-boot:run
-$ You might have to right click pom.xml -> maven -> reload project if ur getting build errors
-$ Alternatively you can just run the ServiceManualApplication.java in IntelliJ
 ```
+You might have to right click pom.xml -> maven -> reload project if ur getting build errors
+Alternatively you can just run the ServiceManualApplication.java in IntelliJ
 
 ### 3. Run Tests
 
@@ -34,6 +34,7 @@ $ The folder is located here Huoltokirja-harjoitus\src\test\java\com\etteplan\se
 
 ```
 $ http://localhost:9000/swagger-ui.html
-$ You can see a summary of what every endpoint does and what inputs it takes in
 ```
+You can see a summary of what every endpoint does and what inputs it takes in
+
 ![image](https://user-images.githubusercontent.com/60407896/226191367-f123c947-10b1-453d-9d63-8732aa06b41d.png)
