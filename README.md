@@ -27,6 +27,6 @@ $ Alternatively you can just run the ServiceManualApplication.java in IntelliJ
 ```
 $ cd Huoltokirja-harjoitus
 $ mvn test
-$ Alternatively you can just run the tests by right clicking the servicemanual folder and choosing "Run tests with coverage" in IntelliJ
+$ Alternatively you can just run the tests by right clicking the servicemanual folder and choosing "Run tests" in IntelliJ
 $ The folder is located here Huoltokirja-harjoitus\src\test\java\com\etteplan\servicemanual
 ```
