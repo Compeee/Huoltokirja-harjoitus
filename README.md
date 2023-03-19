@@ -33,5 +33,5 @@ $ The folder is located here Huoltokirja-harjoitus\src\test\java\com\etteplan\se
 ### 4. Swagger Docs
 
 ```
-$ http://localhost:9000/swagger-ui/index.html
+$ http://localhost:9000/swagger-ui.html
 ```
