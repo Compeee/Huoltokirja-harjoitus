@@ -34,4 +34,6 @@ $ The folder is located here Huoltokirja-harjoitus\src\test\java\com\etteplan\se
 
 ```
 $ http://localhost:9000/swagger-ui.html
+![image](https://user-images.githubusercontent.com/60407896/226191367-f123c947-10b1-453d-9d63-8732aa06b41d.png)
+
 ```
