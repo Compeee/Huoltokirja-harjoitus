@@ -2,6 +2,7 @@ package com.etteplan.servicemanual.servicetask;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import com.etteplan.servicemanual.factorydevice.FactoryDevice;
+import com.etteplan.servicemanual.factorydevice.FactoryDeviceRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,8 @@ import java.util.List;
 public class ServiceTaskRepositoryTest {
     @Autowired
     private ServiceTaskRepository serviceTaskRepository;
+    @Autowired
+    private FactoryDeviceRepository factoryDeviceRepository;
     ServiceTask serviceTask1;
     ServiceTask serviceTask2;
     ServiceTask serviceTask3;
@@ -22,6 +25,7 @@ public class ServiceTaskRepositoryTest {
 
     @BeforeEach
     void setUp(){
+        factoryDeviceRepository.save(factoryDevice);
         serviceTask1 = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.UNIMPORTANT);
         serviceTask2 = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.IMPORTANT);
         serviceTask3 = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.CRITICAL);

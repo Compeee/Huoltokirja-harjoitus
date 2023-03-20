@@ -131,13 +131,36 @@ public class ServiceTaskControllerTest {
         when(serviceTaskService.updateServiceTaskState(any(Long.class)))
                 .thenReturn("Succesfully updated state of task id: " + task.getId());
 
-        // Send a PUT request to update the task state
+        // Send a patch request to update the task state
         mvc.perform(MockMvcRequestBuilders
                         .patch("/api/tasks/{id}", 1L)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
     }
+    @Test
+    void updateTaskInformation() throws Exception {
+        UpdateTaskRequest request = new UpdateTaskRequest("updated", TaskCategory.CRITICAL);
+        // Create a new task
+        ServiceTask task = new ServiceTask();
+        task.setId(1L);
+        task.setFactoryDevice(new FactoryDevice());
+        task.setCategory(TaskCategory.UNIMPORTANT);
+        task.setDescription("description");
+        task.setTaskState(TaskState.OPEN);
+        task.setCreationDate(LocalDateTime.now());
+
+        // Mock the service call to update the task state
+        when(serviceTaskService.updateServiceTaskById(any(Long.class), any(UpdateTaskRequest.class)))
+                .thenReturn(task);
+
+        // Send a PUT request to update the task desc and category
+        mvc.perform(MockMvcRequestBuilders
+                        .put("/api/tasks/{id}", 1L)
+                        .content(objectMapper.writeValueAsString(request))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
     }
+}
 
 

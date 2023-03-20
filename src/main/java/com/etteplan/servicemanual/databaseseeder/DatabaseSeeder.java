@@ -1,7 +1,9 @@
-package com.etteplan.servicemanual.factorydevice;
+package com.etteplan.servicemanual.databaseseeder;
 
 
 import com.etteplan.servicemanual.exceptions.FactoryDeviceNotFoundException;
+import com.etteplan.servicemanual.factorydevice.FactoryDevice;
+import com.etteplan.servicemanual.factorydevice.FactoryDeviceRepository;
 import com.etteplan.servicemanual.servicetask.ServiceTask;
 import com.etteplan.servicemanual.servicetask.ServiceTaskRepository;
 import com.etteplan.servicemanual.servicetask.TaskCategory;
