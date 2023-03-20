@@ -43,11 +43,11 @@ public class FactoryDeviceServiceTest {
         // Mock the repository's findById method to return task
         when(factoryDeviceRepository.findById(factoryDeviceId)).thenReturn(Optional.of(factoryDevice));
 
-        // Call the service to get service task by id
+        // Call the service to get device by id
         FactoryDevice factoryDevice1 = factoryDeviceService.getFactoryDeviceById(factoryDeviceId).orElseThrow(
                 () -> new FactoryDeviceNotFoundException("No device found with given id", factoryDeviceId));
 
-        // Verify that the repository's deleteById method was called with the correct ID
+        // Verify that the repository's findById method was called with the correct ID
         verify(factoryDeviceRepository).findById(factoryDeviceId);
 
         assertThat(factoryDevice1.getId()).isEqualTo(factoryDeviceId);
@@ -60,13 +60,13 @@ public class FactoryDeviceServiceTest {
         Long factoryDeviceId = 1L;
         FactoryDevice factoryDevice = new FactoryDevice(factoryDeviceId, "Device 1", 1999, "Type 5");
 
-        // Mock the repository's findById method to return task
+        // Mock the repository's save method to return task
         when(factoryDeviceRepository.save(factoryDevice)).thenReturn(factoryDevice);
 
-        // Call the service to get service task by id
+        // Call the service to get create a new factory device
         FactoryDevice savedDevice = factoryDeviceService.createNewFactoryDevice(factoryDevice);
 
-        // Verify that the repository's deleteById method was called with the correct ID
+        // Verify that the repository's save method was called with the correct device
         verify(factoryDeviceRepository).save(factoryDevice);
 
         assertThat(savedDevice.getId()).isEqualTo(factoryDeviceId);
