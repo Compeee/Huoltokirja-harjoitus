@@ -151,7 +151,7 @@ public class ServiceTaskControllerTest {
         task.setCreationDate(LocalDateTime.now());
 
         // Mock the service call to update the task state
-        when(serviceTaskService.updateServiceTaskById(any(Long.class), any(UpdateTaskRequest.class)))
+        when(serviceTaskService.updateServiceTaskById(any(Long.class), any(String.class), any(TaskCategory.class)))
                 .thenReturn(task);
 
         // Send a PUT request to update the task desc and category

@@ -53,8 +53,8 @@ public class ServiceTaskController {
     }
     @Operation(summary = "Update a service task with new description and category, valid categories are IMPORTANT, UNIMPORTANT and CRITICAL")
     @PutMapping("/{serviceTaskId}")
-    public ServiceTask updateServiceTaskById(@PathVariable("serviceTaskId") Long serviceTaskId, UpdateTaskRequest updateTaskRequest){
-        return serviceTaskService.updateServiceTaskById(serviceTaskId, updateTaskRequest);
+    public ServiceTask updateServiceTaskById(@PathVariable("serviceTaskId") Long serviceTaskId, @RequestBody UpdateTaskRequest updateTaskRequest){
+        return serviceTaskService.updateServiceTaskById(serviceTaskId, updateTaskRequest.description, updateTaskRequest.category);
     }
 
 }

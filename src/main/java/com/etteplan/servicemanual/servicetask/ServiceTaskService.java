@@ -73,13 +73,15 @@ public class ServiceTaskService {
         return serviceTaskRepository.findById(serviceTaskId);
     }
 
-    public ServiceTask updateServiceTaskById(Long serviceTaskId, UpdateTaskRequest updateTaskRequest) {
+    public ServiceTask updateServiceTaskById(Long serviceTaskId, String description, TaskCategory category) {
         ServiceTask serviceTask = serviceTaskRepository.findById(serviceTaskId).orElseThrow(
                 () -> new ServiceTaskNotFoundException("Task not found with the given id: ", serviceTaskId));
-        serviceTask.setDescription(updateTaskRequest.description);
-        serviceTask.setCategory(updateTaskRequest.category);
+        serviceTask.setDescription(description);
+        serviceTask.setCategory(category);
         serviceTask.setCreationDate(LocalDateTime.now());
         return serviceTaskRepository.save(serviceTask);
     }
+
+
 }
 
