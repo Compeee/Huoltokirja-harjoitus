@@ -44,17 +44,23 @@ public class ServiceTaskRepositoryTest {
 
     @Test
     void testFindAllAndOrderByCategoryAndCreationDate(){
+        // Retrieve a list of tasks from the database
         List<ServiceTask> listOfTasks = serviceTaskRepository.findAllByOrderByCategoryAscCreationDateDesc();
+
+        // Make sure that the task with category CRITICAL is first on teh list
         assertThat(listOfTasks.get(0)).isEqualTo(serviceTask3);
         assertThat(listOfTasks.get(0).getCategory()).isEqualTo(serviceTask3.getCategory());
+        // Add a new task with CRITICAL category
         ServiceTask serviceTaskNew = new ServiceTask(LocalDateTime.now(), "BROKEN", TaskState.OPEN, factoryDevice, TaskCategory.CRITICAL);
         serviceTaskRepository.save(serviceTaskNew);
+        // Retrieve the updated list and make sure the new task is displayed first because it was created after the first
         List<ServiceTask> updatedList = serviceTaskRepository.findAllByOrderByCategoryAscCreationDateDesc();
         assertThat(updatedList.get(0)).isEqualTo(serviceTaskNew);
     }
 
     @Test
     void findByDeviceIdAndOrderByCategoryAndCreationDate(){
+        // Retrieve tasks by device id and make sure that the CRITICAL task is first in the list
         List<ServiceTask> listOfTasks = serviceTaskRepository.findTasksByFactoryDeviceIdOrderByCategoryAscCreationDateDesc(factoryDevice.getId());
         assertThat(listOfTasks.get(0).getCategory()).isEqualTo(serviceTask3.getCategory());
     }
