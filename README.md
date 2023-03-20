@@ -25,7 +25,7 @@ You might have to right click pom.xml -> maven -> reload project if ur getting b
 
 Alternatively you can just run the ServiceManualApplication.java in IntelliJ
 
-### 3. Run Tests
+### 4. Run Tests
 
 ```
 $ cd Huoltokirja-harjoitus
@@ -35,7 +35,7 @@ Alternatively you can just run the tests by right clicking the servicemanual fol
 
 The folder is located at \Huoltokirja-harjoitus\src\test\java\com\etteplan\servicemanual
 
-### 4. Swagger Docs
+### 5. Swagger Docs
 
 ```
 $ Once you have the app running you can access the api docs at http://localhost:9000/swagger-ui.html
