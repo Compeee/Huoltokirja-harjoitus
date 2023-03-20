@@ -16,7 +16,7 @@ $ docker-compose up -d
 ### 3. Run Backend
 
 ```
-$ cd Huoltokirja-harjoitus/src/main/java/com/etteplan/servicemanual
+$ cd Huoltokirja-harjoitus
 $ mvn spring-boot:run
 ```
 The database is seeded on run with the data from seeddata.csv along with a few service tasks.
