@@ -21,9 +21,9 @@ $ mvn spring-boot:run
 ```
 The database is seeded on run with the data from seeddata.csv along with a few service tasks.
 
-You might have to right click pom.xml -> maven -> reload project if ur getting build errors
+You might have open the project in IntelliJ and right click pom.xml -> maven -> reload project if ur getting build errors
 
-Alternatively you can just run the ServiceManualApplication.java in IntelliJ
+Alternatively you can just run the ServiceManualApplication.java in IntelliJ found at Huoltokirja-harjoitus\src\main\java\com\etteplan\servicemanual\ServiceManualApplication.java
 
 ### 4. Run Tests
 
