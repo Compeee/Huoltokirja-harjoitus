@@ -42,4 +42,4 @@ $ Once you have the app running you can access the api docs at http://localhost:
 ```
 You can see a summary of what every endpoint does and what inputs it takes in
 
-![image](https://user-images.githubusercontent.com/60407896/226191367-f123c947-10b1-453d-9d63-8732aa06b41d.png)
+![image](https://user-images.githubusercontent.com/60407896/226338038-f59be3ec-ba60-4131-9195-7c48bdabbd1b.png)
